@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1523301816 source:/home/codemonk/Desktop/Game/SnakeGame/game.c
+	<GL/gl.h>
+	<GL/glut.h>
+	"game.h"
+	<stdio.h>
+	<stdlib.h>
+
+1523298559 /home/codemonk/Desktop/Game/SnakeGame/game.h
+
+1523302434 source:/home/codemonk/Desktop/Game/SnakeGame/main.c
+	<GL/gl.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	"game.h"
+
