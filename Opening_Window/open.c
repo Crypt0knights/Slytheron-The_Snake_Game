@@ -6,8 +6,6 @@
 #include<string.h>
 
 void display(void);
-void polygon(int a, int b, int c , int d);
-void DrawCube();
 void printtext(int x, int y,char String[]);
 void processNormalKeys(unsigned char key,int x,int y);
 int WindowHeight = 1000;
@@ -67,17 +65,16 @@ void display(void)
     sprintf(stri, "S\t\tL\t\tY\t\tT\t\tH\t\tE\t\tR\t\tO\t\tN\t\t-\tT\th\te\t\tS\tn\ta\tk\te\t\tG\ta\tm\te");
 
     printtext(280,700,stri);
-     sprintf(stri,"Press S to get the Snake Rollin....");
+    sprintf(stri,"Press S to get the Snake Rollin....");
     printtext(360,500,stri);
     sprintf(stri,"Press ESC to Exit");
-     printtext(415,440,stri);
-
-	glutSwapBuffers();
+    printtext(415,440,stri);
+    glutSwapBuffers();
 }
 void processNormalKeys(unsigned char key,int x,int y)
 {
 if(key ==27)
   exit(0);
-	if(key==32)
-	  exit(0);
+if(key==32)
+  exit(0);
 }
