@@ -78,6 +78,6 @@ void processNormalKeys(unsigned char key,int x,int y)
 {
 if(key ==27)
   exit(0);
-	if(key==115)
+	if(key==32)
 	  exit(0);
 }
