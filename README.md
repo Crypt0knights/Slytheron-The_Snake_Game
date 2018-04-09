@@ -9,3 +9,8 @@
 
 3. Snake Game Without Graphics Library ( We can focus more on data structures part with this ) also on Multiplayer Instances of the game plus some extra features.. https://youtu.be/U59RLO4yymw (not for linux)
 
+
+/usr/lib/x86_64-linux-gnu/libGL.so
+/usr/lib/x86_64-linux-gnu/libGLU.so
+/usr/lib/x86_64-linux-gnu/libglut.so
+
