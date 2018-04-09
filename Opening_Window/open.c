@@ -65,7 +65,7 @@ void display(void)
     sprintf(stri, "S\t\tL\t\tY\t\tT\t\tH\t\tE\t\tR\t\tO\t\tN\t\t-\tT\th\te\t\tS\tn\ta\tk\te\t\tG\ta\tm\te");
 
     printtext(280,700,stri);
-    sprintf(stri,"Press S to get the Snake Rollin....");
+    sprintf(stri,"Press SPACE to get the Snake Rollin....");
     printtext(360,500,stri);
     sprintf(stri,"Press ESC to Exit");
     printtext(415,440,stri);
