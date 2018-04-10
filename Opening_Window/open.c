@@ -19,7 +19,7 @@ int main(int argc, char *argv[])//argc-stores the count to aruguments
 	glutInitWindowPosition(500, 0);//WindowPosition
 	glutCreateWindow("Welcome to SLYTHERON");//Initialising window
 	glutDisplayFunc(display);//display_rendering
-  glutKeyboardFunc(processNormalKeys);//keyboard control
+    glutKeyboardFunc(processNormalKeys);//keyboard control
 	glMatrixMode(GL_PROJECTION);//Applies subsequent matrix operations to the projection matrix stack
 	glLoadIdentity();//replaces the current matrix with the identity matrix
 	gluPerspective(70, 1, 1, 100);//specifying viewing
@@ -61,22 +61,18 @@ void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
-
     char stri[100000];
     sprintf(stri, "S\t\tL\t\tY\t\tT\t\tH\t\tE\t\tR\t\tO\t\tN\t\t-\tT\th\te\t\tS\tn\ta\tk\te\t\tG\ta\tm\te");
-
     printtext(280,700,stri);
-
     sprintf(stri,"Press SPACE to get the Snake Rollin....");
-		glColor3f(0,0,1);
+    glColor3f(0,0,1);
     printtext(360,500,stri);
-		sprintf(stri,"Use Arrow Keys To Control the SNAKE!!!! ");
-		glColor3f(1,0,0);
-		printtext(330,450,stri);
-		glColor3f(0,0,1);
+	sprintf(stri,"Use Arrow Keys To Control the SNAKE!!!! ");
+	glColor3f(1,0,0);
+	printtext(330,450,stri);
+	glColor3f(0,0,1);
     sprintf(stri,"If Bored,press ESC to Exit");
     printtext(415,400,stri);
-
     glutSwapBuffers();
 }
 void processNormalKeys(unsigned char key,int x,int y)
