@@ -124,8 +124,8 @@ void random1(int *x,int *y)
     int _maxX= gridX-2;
     int _maxY=gridY-2;
     int _min=1;
-    srand(time(NULL));
-    *x=_min+rand()%(_maxX+_min);
+    srand(time(NULL));  //seeding a random number, value of time(NULL) keeps chaning every second, srand(time(NULL)) changes the algorithm of rand() function
+    *x=_min+rand()%(_maxX+_min);    //here the result is in between (_min + (0,_maxX+_min-1))   // this is how the rand algorithms works.
     *y=_min+rand()%(_maxY+_min);
 }
 
