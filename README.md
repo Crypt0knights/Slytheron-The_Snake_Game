@@ -8,6 +8,9 @@
 
 3. Snake Game Without Graphics Library https://goo.gl/os8tTu (not for linux)
 
+4.To Load an image to openGL:https://youtu.be/J1QWE5ntyhw
+
+
 # Steps to initialise and start the project-
 
   1-Make a new OPENGL Project using CodeBlocks IDE.
