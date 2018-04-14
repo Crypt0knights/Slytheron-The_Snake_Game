@@ -17,20 +17,12 @@ int hurdleX[10] = {5,5,5,5,5,5,5,5,5,5}, hurdleY[10] = {16,17,18,19,20,21,22,23,
 bool food = true;
 short sDirection= RIGHT;                                                    // gves initial direction to snake by default
 
-void delay(int number_of_seconds);
 void unit(int x, int y);
 void initGrid(int, int);                                                  //initialize grid
 void drawGrid();
 void unit(int x,int y);
 void drawFood();
 void drawSnake();
-
-void delay(int number_of_seconds)
-{
-    int milli_seconds = 1000 * number_of_seconds;                           // Converting time into milli_seconds
-    clock_t start_time = clock();                                           // Stroing start time
-    while (clock() < start_time + milli_seconds);                           // looping till required time is not acheived
-}
 
 void unit(int x,int y)
 {
@@ -73,7 +65,7 @@ void drawFood()
 
     for(i = 10; i<30; i++)
     {
-        if(foodX == i && foodY == 8 || foodX == (i+1) && foodY == 9)
+        if((foodX == i && foodY == 8) || (foodX == (i+1) && foodY == 9))
             {
                 random1(&foodX, &foodY);
             }
@@ -81,7 +73,7 @@ void drawFood()
 
     for(i = 10; i<30; i++)
     {
-        if(foodX == i && foodY == 30 || foodX == (i+1) && foodY == 31)
+        if((foodX == i && foodY == 30) || (foodX == (i+1) && foodY == 31))
             {
                 random1(&foodX, &foodY);
             }
@@ -147,20 +139,19 @@ void drawSnake()
         }
     }
 
-
-
     for(i = 10; i<30; i++)
     {
-    if(posX[0] == i && posY[0] == 8 || posX[0] == (i+1) && posY[0] == 9)
+        if(posX[0] == i && posY[0] == 8 || posX[0] == (i+1) && posY[0] == 9)
         {
         gameOver = true;
         }
 
-    if(posX[0] == i && posY[0] == 30 || posX[0] == (i+1) && posY[0] == 31)
+        if(posX[0] == i && posY[0] == 30 || posX[0] == (i+1) && posY[0] == 31)
         {
         gameOver = true;
         }
-    if(posX[0] == 30 && (posY[0] == 31 || posY[0] == 9) )
+
+        if(posX[0] == 30 && (posY[0] == 31 || posY[0] == 9) )
         {
         gameOver = false;
         }
