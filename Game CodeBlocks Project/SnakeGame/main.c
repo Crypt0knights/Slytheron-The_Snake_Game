@@ -1,4 +1,5 @@
 //compile using  gcc file.c -o file -lGL -lGLU -lglut
+//Snake Game 1.0
 #include<GL/gl.h>
 #include<GL/glut.h>
 #include<stdio.h>
