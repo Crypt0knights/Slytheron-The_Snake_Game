@@ -12,6 +12,9 @@ void initGrid(int , int);
 void drawGrid();
 void drawSnake();
 void unit();
+
+void hurlde();
+
 void drawFood();
 void random1(int *,int *);
 void delay(int);

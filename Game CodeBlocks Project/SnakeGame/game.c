@@ -11,8 +11,9 @@
 extern int score;
 extern bool gameOver;
 
-int gridX, gridY, foodX, foodY, snake_length = 5;;
+int gridX, gridY, foodX, foodY, snake_length = 5;
 int posX[60]={20,20,20,20,20},posY[60]={20,19,18,17,16};
+int hurdleX[10] = {5,5,5,5,5,5,5,5,5,5}, hurdleY[10] = {16,17,18,19,20,21,22,23,24,25};
 bool food = true;
 short sDirection= RIGHT;                                                    // gves initial direction to snake by default
 
@@ -43,14 +44,50 @@ void unit(int x,int y)
     glEnd();
 }
 
+void hurlde()
+{
+        int i;
+        glColor4f(1.0,0.0,0.0,0.5);
+
+        for(i = 10 ;i <30 ; i++)
+        {
+            glRectd(i,8,1+i,10);
+        }
+
+        for(i = 10 ;i <30 ; i++)
+        {
+            glRectd(i,30,1+i,32);
+        }
+
+}
+
 void drawFood()
 {
+    int i;
     if(food)
         {
         random1(&foodX,&foodY);
         }
     food=false;
     glColor3f(1,1,0);
+
+    for(i = 10; i<30; i++)
+    {
+        if(foodX == i && foodY == 8 || foodX == (i+1) && foodY == 9)
+            {
+                random1(&foodX, &foodY);
+            }
+    }
+
+    for(i = 10; i<30; i++)
+    {
+        if(foodX == i && foodY == 30 || foodX == (i+1) && foodY == 31)
+            {
+                random1(&foodX, &foodY);
+            }
+    }
+
+
     glRectf(foodX,foodY,foodX+1,foodY+1);
 }
 
@@ -109,6 +146,31 @@ void drawSnake()
            gameOver = true;
         }
     }
+
+
+
+    for(i = 10; i<30; i++)
+    {
+    if(posX[0] == i && posY[0] == 8 || posX[0] == (i+1) && posY[0] == 9)
+        {
+        gameOver = true;
+        }
+
+    if(posX[0] == i && posY[0] == 30 || posX[0] == (i+1) && posY[0] == 31)
+        {
+        gameOver = true;
+        }
+    if(posX[0] == 30 && (posY[0] == 31 || posY[0] == 9) )
+        {
+        gameOver = false;
+        }
+    }
+
+    if(posX[0] == 10 && posY[0] == 8 || posX[0] == 10 && posY[0] == 9 || posX[0] == 29 && posY[0] == 8 || posX[0] == 29 && posY[0] == 9 || posX[0] == 10 && posY[0] == 30 || posX[0] == 10 && posY[0] == 31  || posX[0] == 29 && posY[0] == 30 || posX[0] == 29 && posY[0] == 31)
+        {
+        gameOver = true;
+        }
+
     if(posX[0]==foodX && posY[0]==foodY)
         {
         score++;
