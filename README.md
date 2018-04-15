@@ -1,6 +1,6 @@
 # C_Project - *Slytheron-The Snake Game*
 ## Platform - Windows OS
-##### Prerequisites - Set Up Glut in Windows - http://lazyfoo.net/tutorials/OpenGL/01_hello_opengl/windows/codeblocks/index.php
+##### Development Prerequisites - Set Up Glut in Windows - http://lazyfoo.net/tutorials/OpenGL/01_hello_opengl/windows/codeblocks/index.php
 
 # Tutorials for learning Open-GL:
 
