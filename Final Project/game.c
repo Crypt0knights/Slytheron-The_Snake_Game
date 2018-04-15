@@ -68,6 +68,48 @@ void hurlde()
         glVertex2f(9.0,9.0);
         glVertex2f(10.0,9.0);
         glEnd();
+        //upper top first
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(11.0,32.0);
+        glVertex2f(11.0,33.0);
+        glEnd();
+        //upper top second
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(29.0,32.0);
+        glVertex2f(29.0,33.0);
+        glEnd();
+        //upper low first
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(11.0,29.0);
+        glVertex2f(11.0,30.0);
+        glEnd();
+        //upper low second
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(29.0,29.0);
+        glVertex2f(29.0,30.0);
+        glEnd();
+
+        //bottom top first
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(11.0,10.0);
+        glVertex2f(11.0,11.0);
+        glEnd();
+        //bottom top second
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(29.0,10.0);
+        glVertex2f(29.0,11.0);
+        glEnd();
+        //bottom low first
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(11.0,7.0);
+        glVertex2f(11.0,8.0);
+        glEnd();
+
+        //bottom low second
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(29.0,7.0);
+        glVertex2f(29.0,8.0);
+        glEnd();
 }
 
 void drawFood()
