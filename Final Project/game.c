@@ -51,7 +51,6 @@ void hurlde()
             glRectd(i,30,1+i,32);
         }
 }
-
 void drawFood()
 {
     int i;
@@ -64,7 +63,7 @@ void drawFood()
 
     for(i = 10; i<30; i++)
     {
-        if((foodX == i && foodY == 8) || (foodX == (i+1) && foodY == 9))
+        if(foodX == i && (foodY == 8 || foodY == 9))
             {
                 random1(&foodX, &foodY);
             }
@@ -72,11 +71,13 @@ void drawFood()
 
     for(i = 10; i<30; i++)
     {
-        if((foodX == i && foodY == 30) || (foodX == (i+1) && foodY == 31))
+        if(foodX == i && (foodY == 30 || foodY == 31))
             {
                 random1(&foodX, &foodY);
             }
     }
+
+
     glRectf(foodX,foodY,foodX+1,foodY+1);
 }
 
@@ -135,29 +136,24 @@ void drawSnake()
            gameOver = true;
         }
     }
-     for(i = 10; i<30; i++)
+
+    for(i = 10; i<30; i++)
     {
-        if(posX[0] == i && posY[0] == 8 || posX[0] == (i+1) && posY[0] == 9)
+        if(posX[0] == i && (posY[0] == 8 || posY[0] == 9))
         {
         gameOver = true;
         }
 
-        if(posX[0] == i && posY[0] == 30 || posX[0] == (i+1) && posY[0] == 31)
+        if(posX[0] == i && (posY[0] == 30 || posY[0] == 31))
         {
         gameOver = true;
         }
 
-        if(posX[0] == 30 && (posY[0] == 31 || posY[0] == 9) )
+        if(posX[0] == 30 && (posY[0] == 8 || posY[0] == 9 || posY[0] == 30 || posY[0] == 30))
         {
         gameOver = false;
         }
     }
-
-    if(posX[0] == 10 && posY[0] == 8 || posX[0] == 10 && posY[0] == 9 || posX[0] == 29 && posY[0] == 8 || posX[0] == 29 && posY[0] == 9 || posX[0] == 10 && posY[0] == 30 || posX[0] == 10 && posY[0] == 31  || posX[0] == 29 && posY[0] == 30 || posX[0] == 29 && posY[0] == 31)
-        {
-        gameOver = true;
-        }
-
 
 
     if(posX[0]==foodX && posY[0]==foodY)
@@ -169,6 +165,7 @@ void drawSnake()
             snake_length = MAX;
         }
 }
+
 
 void random1(int *x,int *y)
 {
