@@ -13,7 +13,6 @@ extern int score;
 extern bool gameOver;
 int gridX, gridY, foodX, foodY, snake_length = 5;
 int posX[60]={20,20,20,20,20},posY[60]={20,19,18,17,16};
-int hurdleX[10] = {5,5,5,5,5,5,5,5,5,5}, hurdleY[10] = {16,17,18,19,20,21,22,23,24,25};
 bool food = true;
 short sDirection= RIGHT;                                                  //gives initial direction to snake by default
 //--------------------------FUNCTION PROTOTYPES----------------------------------------
@@ -39,18 +38,38 @@ void unit(int x,int y)
 void hurlde()
 {
         int i;
-        glColor4f(1.0,0.0,0.0,0.5);
-
+        glColor4f(1.0,0.0,0.0,1.0);
         for(i = 10 ;i <30 ; i++)
         {
             glRectd(i,8,1+i,10);
         }
-
         for(i = 10 ;i <30 ; i++)
         {
             glRectd(i,30,1+i,32);
         }
+        glColor4f(1.0,0.0,0.0,1);
+        //top right
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(30.0,31.0);
+        glVertex2f(31.0,31.0);
+        glEnd();
+        //top left
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(9.0,31.0);
+        glVertex2f(10.0,31.0);
+        glEnd();
+        //bottom right
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(30.0,9.0);
+        glVertex2f(31.0,9.0);
+        glEnd();
+        //bottom left
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(9.0,9.0);
+        glVertex2f(10.0,9.0);
+        glEnd();
 }
+
 void drawFood()
 {
     int i;
@@ -137,25 +156,61 @@ void drawSnake()
         }
     }
 
-    for(i = 10; i<30; i++)
+  //lower
+    //left
+    if(posX[0] == 9 && (posY[0] == 8 || posY[0] == 9))
+        {
+        gameOver = true;
+        }
+    //right
+    if(posX[0] == 30 && (posY[0] == 8 || posY[0] == 9))
+        {
+        gameOver = true;
+        }
+    //top
+    for(i = 10; i<30 ;i++)
     {
-        if(posX[0] == i && (posY[0] == 8 || posY[0] == 9))
+        if( posX[0] == i && posY[0] ==10)
         {
         gameOver = true;
-        }
-
-        if(posX[0] == i && (posY[0] == 30 || posY[0] == 31))
-        {
-        gameOver = true;
-        }
-
-        if(posX[0] == 30 && (posY[0] == 8 || posY[0] == 9 || posY[0] == 30 || posY[0] == 30))
-        {
-        gameOver = false;
         }
     }
-
-
+    //bottom
+    for(i = 10; i<30 ;i++)
+    {
+        if( posX[0] == i && posY[0] ==7)
+        {
+        gameOver = true;
+        }
+    }
+    //upper
+        //left
+     if(posX[0] == 9 && (posY[0] == 30 || posY[0] == 31))
+        {
+        gameOver = true;
+        }
+        //right
+    if(posX[0] == 30 && (posY[0] == 30 || posY[0] == 31))
+        {
+        gameOver = true;
+        }
+        //top
+    for(i = 10; i<30 ;i++)
+    {
+        if( posX[0] == i && posY[0] == 32)
+        {
+        gameOver = true;
+        }
+    }
+        //bottom
+    for(i = 10; i<30 ;i++)
+    {
+        if( posX[0] == i && posY[0] == 29)
+        {
+        gameOver = true;
+        }
+    }
+    //Scoring when eats food
     if(posX[0]==foodX && posY[0]==foodY)
         {
         score++;
@@ -165,7 +220,6 @@ void drawSnake()
             snake_length = MAX;
         }
 }
-
 
 void random1(int *x,int *y)
 {
@@ -195,3 +249,4 @@ void drawGrid()
         }
 }
 //-------------------------END-------------------------------------------------------------------------
+
