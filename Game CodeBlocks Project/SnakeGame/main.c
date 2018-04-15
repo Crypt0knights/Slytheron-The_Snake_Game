@@ -79,7 +79,9 @@ void display_callback()
 	drawGrid();
 	glColor3d(1,1,1);
 	drawSnake();
+
 	hurlde();
+
 	glColor4d(1,0,0,1);
 	drawFood();
 	glutSwapBuffers();                                                              //Buffer is first loaded, another displays //some delay is added by glutSwapBuffers() too
@@ -103,8 +105,8 @@ void reshape_callback(int w, int h)	                                            
 void timer_callback()
 {
     glutPostRedisplay();
-    if(score == 5)
-        FPS = 10;                                                    //display function is to be called next, new frame is displayed each time timer_callback is called
+    if(score == 2)
+        FPS = 10;                                                                   //display function is to be called next, new frame is displayed each time timer_callback is called
     if(score == 10)
         FPS = 15;
     if(score == 15)
