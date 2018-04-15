@@ -135,30 +135,26 @@ void drawSnake()
            gameOver = true;
         }
     }
-     for(i = 10; i<30; i++)
+    for(i = 10; i<30; i++)
     {
-        if(posX[0] == i && posY[0] == 8 || posX[0] == (i+1) && posY[0] == 9)
+        if((posX[0] == i && posY[0] == 8) || (posX[0] == (i+1) && posY[0] == 9))
         {
         gameOver = true;
         }
-
-        if(posX[0] == i && posY[0] == 30 || posX[0] == (i+1) && posY[0] == 31)
+        if((posX[0] == i && posY[0] == 30) || (posX[0] == (i+1) && posY[0] == 31))
         {
         gameOver = true;
         }
-
         if(posX[0] == 30 && (posY[0] == 31 || posY[0] == 9) )
         {
         gameOver = false;
         }
     }
 
-    if(posX[0] == 10 && posY[0] == 8 || posX[0] == 10 && posY[0] == 9 || posX[0] == 29 && posY[0] == 8 || posX[0] == 29 && posY[0] == 9 || posX[0] == 10 && posY[0] == 30 || posX[0] == 10 && posY[0] == 31  || posX[0] == 29 && posY[0] == 30 || posX[0] == 29 && posY[0] == 31)
+    if((posX[0] == 10 && posY[0] == 8)||(posX[0] == 10 && posY[0] == 9)||(posX[0] == 29 && posY[0] == 8)||(posX[0] == 29 && posY[0] == 9)||(posX[0] == 10 && posY[0] == 30)||(posX[0] == 10 && posY[0] == 31)||(posX[0] == 29 && posY[0] == 30)||(posX[0] == 29 && posY[0] == 31))
         {
         gameOver = true;
         }
-
-
 
     if(posX[0]==foodX && posY[0]==foodY)
         {
