@@ -116,7 +116,11 @@ void timer_callback()
         FPS = 30;
     if(score == 25)
         FPS = 60;
-
+    char snum[5];
+    itoa(score, snum, 10);
+    char gameName[30] = "Slytheron : ";
+    strcat(gameName, snum);
+    glutSetWindowTitle(gameName);
     glutTimerFunc(1000/FPS, timer_callback, 0);                                     //here it is a continous loop of frames being dispalyed we want 1000/FPS frames in one sec
 }
 
