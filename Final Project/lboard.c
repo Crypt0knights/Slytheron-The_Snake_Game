@@ -21,8 +21,7 @@ void display();
 void insertlist(int ,char []);
 void sortlist();
 void writetofile();
-int listsize;
-listsize=0;
+int listsize = 0;
 //-----------------GLOBAL VARIABLES--------------------------------------//
 extern int score;               //taking values of score
 //-------------------FUNCTION DEFINITIONS START-----------------------//
