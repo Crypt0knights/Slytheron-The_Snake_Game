@@ -23,24 +23,25 @@ void timer_callback();
 void display_callback();
 void reshape_callback(int,int);
 void keyboard_callback(int,int,int);                                                /* (key pressed, mouse X, mouse Y) */
+
 void display(void);
 void printtext(int x, int y,char String[]);
 void processNormalKeys(unsigned char key,int x,int y);
 //-------------------------------------FUNCTION DEFINITIONS---------------------------------------------------------------------
-void initMain()
+void initMain()                                                                     //Background Orange Screen for Initial Menu
 {
 	glEnable(GL_BLEND);                                                             //added this for maintaing alpha value
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(1.0,0.5,0.0,1.0);	                                                //clear color of the window to black
+    glClearColor(1.0,0.5,0.0,1.0);	                                                //clear color of the window to ORANGE
 	initGrid(COLUMNS,ROWS);
 }
 
-void initGameWindow()
+void initGameWindow()                                                               //Initializing Game Window
 {
-	glEnable(GL_BLEND);                                                             //added this for maintaing alpha value
+	glEnable(GL_BLEND);                                                             //added this for maintaining alpha value
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glClearColor(1.0,0.5,0.0,1.0);	                                                //clear color of the window to orange
-	initGrid(COLUMNS,ROWS);
+	initGrid(COLUMNS,ROWS);                                                         //Initializing COLUMS and ROWS for GRID
 }
 
 int main(int argc, char *argv[])                                                    //argc-stores the count to aruguments in case of argument variable
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])                                                
     glutInit(&argc, argv);                                                          //argv-stores the arguments variables
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);                       //Bit mask to select buffer window
 	glutInitWindowSize(WindowWidth, WindowHeight);                                  //WindowSize
-	glutInitWindowPosition(500, 0);                                                 //WindowPosition
+	glutInitWindowPosition(500, 0);                                                 //WindowPosition    -   Position
 	glutCreateWindow("Welcome to SLYTHERON");                                       //Initialising window
 	glutDisplayFunc(display);                                                       //display_rendering
   	glutKeyboardFunc(processNormalKeys);                                            //keyboard control
@@ -116,7 +117,7 @@ void timer_callback()
     if(score == 25)
         FPS = 60;
 
-    glutTimerFunc(1000/FPS, timer_callback, 0);                                     //here it is a continous loop of frames being dispalyed we want 10frames in one sec
+    glutTimerFunc(1000/FPS, timer_callback, 0);                                     //here it is a continous loop of frames being dispalyed we want 1000/FPS frames in one sec
 }
 
 void keyboard_callback(int key,int x,int y)
