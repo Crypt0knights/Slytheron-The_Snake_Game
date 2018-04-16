@@ -19,7 +19,6 @@ short sDirection= RIGHT;                                                  //give
 void unit(int x, int y);
 void initGrid(int, int);                                                  //initialize grid
 void drawGrid();
-void unit(int x,int y);
 void drawFood();
 void drawSnake();
 //------------------------FUNCTION DEFINITIONS-------------------------------------------
@@ -48,6 +47,7 @@ void hurlde()
             glRectd(i,30,1+i,32);
         }
         glColor4f(1.0,0.0,0.0,1);
+        glLineWidth(2.5);
         //top right
         glBegin(GL_LINE_LOOP);
         glVertex2f(30.0,31.0);
