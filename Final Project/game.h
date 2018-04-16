@@ -1,5 +1,6 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
+
 #define UP 1
 #define DOWN -1
 #define RIGHT 2
@@ -13,7 +14,6 @@ void unit();
 void hurlde();
 void drawFood();
 void random1(int *,int *);
-void delay(int);
 void boardprint();
 
 #endif // GAME_H_INCLUDED
