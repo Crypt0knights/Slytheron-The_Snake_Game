@@ -194,7 +194,10 @@ void drawSnake()
     {
         if(posX[0] == posX[i+4] && posY[0] == posY[i+4] )
         {
-           gameOver = true;
+           if(posX[0] == 0 && posY[0] == 0)
+                gameOver = false;
+           else
+                gameOver = true;
         }
     }
 
