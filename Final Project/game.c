@@ -121,7 +121,7 @@ void drawFood()
         }
     food=false;
     glColor3f(1,1,0);
-
+//call random1 again if dont want the food to be drawn in rectaangular blocks again 
     for(i = 10; i<30; i++)
     {
         if(foodX == i && (foodY == 8 || foodY == 9))
@@ -137,6 +137,29 @@ void drawFood()
                 random1(&foodX, &foodY);
             }
     }
+    /* this code in the comment here disables food being drawn at dead ends, instead a random1() function will be called again to draw
+    food at other random position of x and y
+        for(i = 9; i<=30; i++)
+    {
+        if(foodX == i && (foodY == 8 || foodY == 9 || foodY == 7 || foodY == 10))
+            {
+                random1(&foodX, &foodY);
+            }
+    }
+
+    for(i = 9; i<=30; i++)
+    {
+        if(foodX == i && (foodY == 30 || foodY == 31 || foodY == 32 || foodY == 29 ))
+            {
+                random1(&foodX, &foodY);
+            }
+    }
+    
+    
+    
+    
+    
+    */
 
 
     glRectf(foodX,foodY,foodX+1,foodY+1);
