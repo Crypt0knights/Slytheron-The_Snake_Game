@@ -32,7 +32,7 @@ void initMain()                                                                 
 {
 	glEnable(GL_BLEND);                                                             //added this for maintaing alpha value
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(1.0,0.5,0.0,1.0);	                                                //clear color of the window to ORANGE
+    glClearColor(0.0,0.0,0.55,1.0);	                                                //clear color of the window to ORANGE
 	initGrid(COLUMNS,ROWS);
 }
 
@@ -40,7 +40,7 @@ void initGameWindow()                                                           
 {
 	glEnable(GL_BLEND);                                                             //added this for maintaining alpha value
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(1.0,0.5,0.0,1.0);	                                                //clear color of the window to orange
+     glClearColor(0.0,0.0,0.0,1.0);	                                                //clear color of the window to orange
 	initGrid(COLUMNS,ROWS);                                                         //Initializing COLUMS and ROWS for GRID
 }
 
@@ -83,7 +83,7 @@ void display_callback()
 	glColor3d(1,1,1);
 	drawSnake();
 	hurlde();
-	glColor4d(1,0,0,1);
+	glColor4d(1,1,1,1);
 	drawFood();
 	glutSwapBuffers();                                                              //Buffer is first loaded, another displays //some delay is added by glutSwapBuffers() too
                                                                                     //*****************************CHECK***************************************************
@@ -180,7 +180,7 @@ void printtext(int x, int y, char String[])
     glPopMatrix();
     glMatrixMode(GL_MODELVIEW);
     glPopMatrix();
-    glClearColor(1.0,0.5,0.0,1.0);
+     glClearColor(0.0,0.0,0.0,1.0);
 }
 
 void display(void)
@@ -191,12 +191,12 @@ void display(void)
     sprintf(stri, "S\t\tL\t\tY\t\tT\t\tH\t\tE\t\tR\t\tO\t\tN\t\t-\tT\th\te\t\tS\tn\ta\tk\te\t\tG\ta\tm\te");
     printtext(280,700,stri);
     sprintf(stri,"Press SPACE to get the Snake Rollin....");
-    glColor3f(0,0,1);
+     glColor3f(0.99,71,0.08);
     printtext(360,500,stri);
     sprintf(stri,"Use Arrow Keys To Control the SNAKE!!!! ");
-    glColor3f(0,0,1);
+    glColor3f(1,0.73,1);
     printtext(330,450,stri);
-    glColor3f(0,0,1);
+    glColor3f(0.75,0.94,1);
     sprintf(stri,"If Bored,press ESC to Exit");
     printtext(415,400,stri);
     glutSwapBuffers();
