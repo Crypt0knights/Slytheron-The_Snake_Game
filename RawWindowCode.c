@@ -1,12 +1,6 @@
 #include<GL/glut.h>
 #include<stdio.h>
   
-
-
-
-
-
-
 int main(int argc,char** argv)
 {
 glutInit(&argc,argv);
