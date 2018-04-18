@@ -25,7 +25,7 @@ void drawSnake();
 void unit(int x,int y)
 {
     glLineWidth(0.5);
-    glColor4f(1.0,1.0,1.0,0.1);
+    glColor4f(0.9,0.9,0.6,0.2);
     glBegin(GL_LINE_LOOP);    //loop of lines, first vertex and last vertex specified will be connected
     glVertex2f(x,y);    //2 floating
     glVertex2f(x+1,y);
@@ -37,7 +37,7 @@ void unit(int x,int y)
 void hurlde()
 {
         int i;
-        glColor4f(1.0,0.0,0.0,1.0);
+        glColor4f(0.5,0.99,0.0,1.0);
         for(i = 10 ;i <30 ; i++)
         {
             glRectd(i,8,1+i,10);
@@ -46,7 +46,7 @@ void hurlde()
         {
             glRectd(i,30,1+i,32);
         }
-        glColor4f(1.0,0.0,0.0,1);
+         glColor4f(1.0,0.0,0.0,1);
         glLineWidth(2.5);
         //top right
         glBegin(GL_LINE_LOOP);
@@ -120,9 +120,9 @@ void drawFood()
         random1(&foodX,&foodY);
         }
     food=false;
-    glColor3f(1,1,0);
+     glColor3f(0.98,0.86,0.05);
 /*
-    //call random1 again if dont want the food to be drawn **Only** in rectaangular blocks again 
+    //call random1 again if dont want the food to be drawn **Only** in rectaangular blocks again
     for(i = 10; i<30; i++)
     {
         if(foodX == i && (foodY == 8 || foodY == 9))
@@ -139,7 +139,7 @@ void drawFood()
             }
     }
     */
-    
+
     //code below disables food being drawn at dead ends, instead a random1() function will be called again to draw
     //food at other random position of x and y
         for(i = 9; i<=30; i++)
@@ -204,9 +204,9 @@ void drawSnake()
     for(i = 0; i < snake_length; i++)
     {
         if( i == 0)
-           glColor4f(0.0,0.0,0.0,1.0);
+            glColor4f(1.0,0.0,0.0,1.0);
         else
-           glColor3f(1.0,0.0,0.0);
+          glColor3f(1.0,1.0,0.0);
         glRectd(posX[i],posY[i],posX[i]+1,posY[i]+1);
     }
     for(i = 0 ; i < snake_length + 5 ; i++)                             //collision condition
